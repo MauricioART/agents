@@ -1,0 +1,24 @@
+[project]
+name = "market-opportunity-analyst"
+version = "0.1.0"
+description = "CrewAI market research and opportunity analysis project"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "crewai>=1.15,<2",
+  "httpx>=0.27,<1",
+  "python-dotenv>=1.0,<2",
+  "pydantic>=2.7,<3",
+]
+
+[project.scripts]
+market-opportunity-analyst = "market_opportunity_analyst.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/market_opportunity_analyst"]
+
+[tool.crewai]
+type = "crew"
